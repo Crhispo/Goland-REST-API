@@ -2,26 +2,20 @@ package Routes
 
 import (
 	"PackAPI/ModuloAPI/Tasks"
-	"fmt"
-	"net/http"
 
 	"github.com/gorilla/mux"
 )
-
-func indexRoute(resp http.ResponseWriter, req *http.Request) {
-	fmt.Fprintf(resp, "Welcome to my API")
-}
 
 var Router *mux.Router
 
 func init() {
 
-	Router = mux.NewRouter().StrictSlash(true)
+	Router = mux.NewRouter().StrictSlash(false)
 
 }
 
 func RouteIndex() {
-	Router.HandleFunc("/", indexRoute)
+	Router.HandleFunc("/", Tasks.IndexRoute).Methods("GET")
 }
 
 func RouteTasks() {

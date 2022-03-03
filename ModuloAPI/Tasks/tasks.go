@@ -31,6 +31,11 @@ func init() {
 	}
 }
 
+func IndexRoute(resp http.ResponseWriter, req *http.Request) {
+	resp.Header().Set("Content-Type", "application/json")
+	fmt.Fprintf(resp, "Welcome to my API")
+}
+
 func GetTasks(resp http.ResponseWriter, req *http.Request) {
 	resp.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(resp).Encode(tasks)
