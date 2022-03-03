@@ -8,6 +8,7 @@ import (
 
 func main() {
 
+	Routes.RouteIndex()
 	Routes.RouteTasks()
 	Routes.RouteCreateTasks()
 	Routes.RouteTask()
